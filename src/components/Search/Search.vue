@@ -52,3 +52,31 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.search {
+    .input {
+      background-color: rgba(0, 0, 0, .7);
+      box-shadow: none;
+      border: none;
+      color: white;
+      padding: 15px 10px;
+      font-size: 16px;
+      line-height: 1.2;
+      height: auto;
+    }
+    
+    .level {
+        .level-left {
+            span {
+                color: white;
+                text-transform: uppercase;
+            }
+            .b-radio {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+</style>
+
+

@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+$primary: #f65261 !default;
+
 body, html {
   height: 100%;
 }
@@ -14,4 +16,7 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
 }
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>

@@ -44,10 +44,15 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
     section.section {
         background-color: #373737;
         margin-bottom: 30px;
+
+        .b-radio.radio {
+            text-transform: uppercase;
+        }
+
         & .level {
             & .subtitle, & .level-item {
                 color: white;

@@ -15,7 +15,7 @@ export default {
     props: {
         btnType: {
             type: String,
-            default: 'text',
+            default: 'primary',
         },
         btnSize: {
             type: String,
@@ -42,18 +42,7 @@ export default {
 
 <style lang="scss" scoped>
     button.button {
-        background-color: #f65261;
         text-transform: uppercase;
-        text-decoration: none;
-        color: white;
-        transition: all 0.3s linear;
-        &:hover, 
-        &:active,
-        &:focus {
-            background-color: #f65261;
-            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .5);
-            color: white;
-        }
     }
 </style>
 
