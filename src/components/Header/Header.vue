@@ -34,7 +34,7 @@ header {
     background-size: cover;
     background-position: center;
     width: 100%;
-    padding: 0 0 20px 0;
+    padding: 0 0 60px 0;
 
     .search-title {
         font-size: 32px;

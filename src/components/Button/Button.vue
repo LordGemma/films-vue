@@ -2,7 +2,7 @@
     <b-button 
         v-bind:type="`is-${btnType}`" 
         v-bind:size="`is-${btnSize}`"
-        style={...btnCustomStyle}
+        :style='btnCustomStyle'
         @click="handleClick"
     >
         {{ btnText }}

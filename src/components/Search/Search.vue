@@ -6,24 +6,19 @@
                 <Button 
                     btnText='Search'
                     @handleAction='handleSearch'
+                    :btnCustomStyle='serachBtnStyle'
                 />
             </p>
         </b-field>
         <div class="level">
+            <!-- Left side -->
             <div class="level-left">
                 <div class="level-item">
-                    <span>Search By</span>
-                    <b-field>
-                        <b-radio-button v-model="searchBy"
-                            native-value="title">
-                            <span>Title</span>
-                        </b-radio-button>
-
-                        <b-radio-button v-model="searchBy"
-                            native-value="genre">
-                            <span>Genre</span>
-                        </b-radio-button>
-                    </b-field>
+                    <RadioButtons 
+                        :label='label' 
+                        :selectBy='searchBy' 
+                        :buttons='buttons'
+                    />
                 </div>
             </div>
         </div>
@@ -32,10 +27,12 @@
 
 <script>
 import Button from '../Button/Button';
+import RadioButtons from '../Button/RadioButtons';
 
 export default {
     components: {
         Button,
+        RadioButtons,
     },
 
     methods: {
@@ -46,6 +43,23 @@ export default {
 
     data() {
         return {
+            serachBtnStyle: {
+                width: '200px',
+                fontSize: '20px',
+                lineHeight: '1.2',
+                minHeight: '49px',
+            },
+            buttons: [
+                {
+                    name: 'Title',
+                    value: 'title',
+                },
+                 {
+                    name: 'Genre',
+                    value: 'genre',
+                },
+            ],
+            label: 'Search By',
             searchBy: 'title'
         }
     }
@@ -64,17 +78,10 @@ export default {
       line-height: 1.2;
       height: auto;
     }
-    
-    .level {
-        .level-left {
-            span {
-                color: white;
-                text-transform: uppercase;
-            }
-            .b-radio {
-                text-transform: uppercase;
-            }
-        }
+
+    input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #606060;
+        opacity: 1; /* Firefox */
     }
 }
 </style>
