@@ -14,3 +14,11 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.wrapper {
+    padding: 30px 0;
+    background-color: #232323;
+}
+</style>
+
+

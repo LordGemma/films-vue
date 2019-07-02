@@ -24,8 +24,7 @@ export default {
 <style lang="scss">
 footer.footer {
     background-color: #373737;
-    height: 80px;
-    margin-top: 30px;
+    padding: 2rem 1.5rem;
 }
 </style>
 

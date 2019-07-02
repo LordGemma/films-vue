@@ -6,7 +6,7 @@
                 <div class="level-left">
                     <div class="level-item">
                     <p class="subtitle is-5">
-                        <strong>7</strong> movies found
+                        <strong>6</strong> movies found
                     </p>
                     </div>
                 </div>
@@ -57,7 +57,6 @@ export default {
 <style lang="scss">
     section.section.filter-bar {
         background-color: #373737;
-        margin-bottom: 30px;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
 
