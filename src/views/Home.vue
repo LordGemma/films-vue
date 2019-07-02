@@ -2,6 +2,7 @@
   <div class="home">
     <Header />
     <FilterBar />
+    <Main />
     <Footer />
   </div>
 </template>
@@ -10,6 +11,7 @@
 // @ is an alias to /src
 import Header from '@/components/Header/Header';
 import FilterBar from '@/components/FilterBar/FilterBar';
+import Main from '@/components/Main/Main';
 import Footer from '@/components/Footer/Footer';
 
 export default {
@@ -17,6 +19,7 @@ export default {
   components: {
     Header,
     FilterBar,
+    Main,
     Footer,
   }
 }
