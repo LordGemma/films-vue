@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Logo from '../Logo/Logo';
-import Search from '../Search/Search';
+import Logo from '@/components/Logo/Logo';
+import Search from '@/components/Search/Search';
 
 export default {
     name: 'Header',

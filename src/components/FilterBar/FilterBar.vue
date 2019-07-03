@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import RadioButtons from '../Button/RadioButtons';
+import RadioButtons from '@/components/Button/RadioButtons';
 
 export default {
     components: {

@@ -2,30 +2,36 @@
     <div class="card film">
         <div class="card-image">
             <figure class="image is-4by3">
-            <img src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg" alt="Film Poster">
+            <img :src="data.poster_path" alt="Film Poster">
             </figure>
         </div>
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
                     <p class="title is-8 film-title">
-                        Zootopia
+                        {{data.title}}
                         <span class="release-date">
-                            <b-tag>2010</b-tag>
+                            <b-tag>{{new Date(data.release_date).getFullYear()}}</b-tag>
                         </span>
                     </p>
                 </div>
             </div>
 
             <b-taglist>
-                <b-tag>Animation</b-tag>
-                <b-tag>Adventure</b-tag>
-                <b-tag>Family</b-tag>
-                <b-tag>Comedy</b-tag>
+                <b-tag v-for="genre in data.genres" :key="genre">{{genre}}</b-tag>
             </b-taglist>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        data:Object,
+    },
+}
+</script>
+
 
 <style lang="scss">
     .film {
