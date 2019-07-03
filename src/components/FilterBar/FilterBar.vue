@@ -6,7 +6,7 @@
                 <div class="level-left">
                     <div class="level-item">
                     <p class="subtitle is-5">
-                        <strong>6</strong> movies found
+                        <strong>{{total}}</strong> movies found
                     </p>
                     </div>
                 </div>
@@ -28,11 +28,16 @@
 
 <script>
 import RadioButtons from '@/components/Button/RadioButtons';
+import { mapState, mapActions } from 'vuex';
 
 export default {
     components: {
         RadioButtons,
     },
+
+    computed: mapState({
+        total: state => state.films.total
+    }),
 
     data() {
         return {

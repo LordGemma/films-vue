@@ -14,29 +14,16 @@
 
 <script>
 import Film from './Film';
-import { fetchAllFilms } from '@/api/films';
+import { mapState, mapActions } from 'vuex';
 
 export default {
     components: {
        Film, 
     },
 
-    created() {
-        fetchAllFilms()
-        .then(({data}) => {
-            this.films = data.data;
-            console.log(data);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    },
-
-    data() {
-        return {
-            films: []
-        }
-    }
+    computed: mapState({
+        films: state => state.films.filmsList
+    }),
 }
 </script>
 

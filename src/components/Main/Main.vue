@@ -1,16 +1,23 @@
 <template>
     <div class="wrapper">
         <FilmsList />
+        <Pagination />
     </div>
 </template>
 
 <script>
 import FilmsList from '@/components/Films/FilmsList';
+import Pagination from './Pagination/Pagination';
 
 export default {
     components: {
-       FilmsList, 
-    }
+       FilmsList,
+       Pagination, 
+    },
+
+     created() {
+        this.$store.dispatch('films/getAllFilms')
+    },
 }
 </script>
 
