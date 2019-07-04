@@ -15,8 +15,12 @@ export default {
        Pagination, 
     },
 
-     created() {
-        this.$store.dispatch('films/getAllFilms')
+    created() {
+        this.$store.dispatch('films/getAllFilms', {
+            limit: 12, 
+            sortOrder: 'desc', 
+            sortBy: 'release_date'
+        })
     },
 }
 </script>

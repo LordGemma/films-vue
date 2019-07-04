@@ -15,6 +15,7 @@
                 <div class="level-right">
                     <div class="level-item">
                         <RadioButtons
+                            @clicked='sortFilmsBy'
                             :label='label'
                             :selectBy='sortBy' 
                             :buttons='buttons' 
@@ -36,7 +37,8 @@ export default {
     },
 
     computed: mapState({
-        total: state => state.films.total
+        total: state => state.films.total,
+        sortBy: state => state.films.params.sortBy,
     }),
 
     data() {
@@ -44,15 +46,20 @@ export default {
             buttons: [
                 {
                     name: 'Release Date',
-                    value: 'releaseDate',
+                    value: 'release_date',
                 },
                  {
                     name: 'Rating',
-                    value: 'rating',
+                    value: 'vote_average',
                 },
             ],
             label: 'Sort By',
-            sortBy: 'releaseDate',
+        }
+    },
+
+    methods:  {
+        sortFilmsBy(value) {
+            this.$store.dispatch('films/sortFilmsBy', value)
         }
     }
 }

@@ -13,6 +13,7 @@
                 :key="button.value"
                 v-model='relation'
                 :native-value='button.value'
+                @input="handleChange"
             >
                 <span>{{button.name}}</span>
             </b-radio-button>
@@ -23,6 +24,7 @@
 <script>
 export default {
     props: {
+        clicked: Function,
         label: String,
         selectBy: {
             type: String,
@@ -38,6 +40,12 @@ export default {
     data() {
         return {
             relation: this.selectBy
+        }
+    },
+
+    methods: {
+        handleChange(value) {
+            this.$emit('clicked', value);
         }
     }
 }

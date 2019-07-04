@@ -3,13 +3,12 @@
         <div class="container">
             <b-pagination
                 :total="total"
-                :current.sync="current"
+                :current.sync="currentPage"
                 :order="order"
                 :size="size"
                 :simple="isSimple"
                 :rounded="isRounded"
                 :per-page="perPage"
-                @change="getAllFilms"
                 aria-next-label="Next page"
                 aria-previous-label="Previous page"
                 aria-page-label="Page"
@@ -20,27 +19,33 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
     data() {
         return {
-            current: 1,
             perPage: 12,
             order: 'is-centered',
             size: 'is-small',
             isSimple: false,
-            isRounded: false
+            isRounded: false,
         }
     },
 
-    computed: mapState({
-        total: state => state.films.total
-    }),
+    computed: {
+        ...mapState({
+            total: state => state.films.total,
+        }),
+        currentPage: {
+            get() {
+                return this.$store.state.films.params.offset / 12 + 1;
+            },
 
-    methods: mapActions('films', [
-        'getAllFilms'
-    ])
+            set(value) {
+                this.$store.dispatch('films/getNextFilmsPage', value)
+            }
+        }
+    },
 }
 </script>
 
@@ -48,7 +53,7 @@ export default {
 .pagination {
     margin-top: 30px;
 
-    .pagination-previous, .pagination-next, {
+    .pagination-previous, .pagination-next {
         background-color: #9f9f9f;
     }
 

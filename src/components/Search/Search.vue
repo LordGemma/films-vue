@@ -28,11 +28,18 @@
 <script>
 import Button from '../Button/Button';
 import RadioButtons from '../Button/RadioButtons';
+import { mapState, mapActions } from 'vuex';
 
 export default {
     components: {
         Button,
         RadioButtons,
+    },
+
+    computed: {
+        ...mapState({
+            searchBy: state => state.films.searchParams.searchBy,
+        }),
     },
 
     methods: {
@@ -56,11 +63,10 @@ export default {
                 },
                  {
                     name: 'Genre',
-                    value: 'genre',
+                    value: 'genres',
                 },
             ],
             label: 'Search By',
-            searchBy: 'title'
         }
     }
 }
