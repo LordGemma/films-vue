@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <b-field grouped>
-            <b-input placeholder="Search..." expanded></b-input>
+            <b-input placeholder="Search..." v-model="searchText" expanded></b-input>
             <p class="control">
                 <Button 
                     btnText='Search'
@@ -14,7 +14,8 @@
             <!-- Left side -->
             <div class="level-left">
                 <div class="level-item">
-                    <RadioButtons 
+                    <RadioButtons
+                        @clicked='handleClick'
                         :label='label' 
                         :selectBy='searchBy' 
                         :buttons='buttons'
@@ -28,7 +29,6 @@
 <script>
 import Button from '../Button/Button';
 import RadioButtons from '../Button/RadioButtons';
-import { mapState, mapActions } from 'vuex';
 
 export default {
     components: {
@@ -37,14 +37,31 @@ export default {
     },
 
     computed: {
-        ...mapState({
-            searchBy: state => state.films.searchParams.searchBy,
-        }),
+        searchText: {
+            get() {
+                return this.$store.state.films.searchParams.search;
+            },
+            set(value) {
+                this.$store.commit('films/setSearchText', value)
+            }
+        },
+        searchBy: {
+            get() {
+                return this.$store.state.films.searchParams.searchBy;
+            },
+            set(value) {
+                this.$store.commit('films/setSearchByValue', value);
+            }
+        }
     },
 
     methods: {
         handleSearch() {
-            console.log("Hello");
+            this.$store.dispatch('films/searchFilms');
+        },
+
+        handleClick(value) {
+            this.$store.commit('films/setSearchByValue', value);
         }
     },
 

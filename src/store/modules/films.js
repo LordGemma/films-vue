@@ -40,20 +40,20 @@ const actions = {
         const pagination = (value - 1) * 12;
         const params = {
             ...state.params,
+            ...state.searchParams,
             offset: pagination,
         };
         await dispatch('getAllFilms', params);
         commit('setPageNumber', pagination);
     },
 
-    async searchFilms({dispatch, commit}, searchParams) {
+    async searchFilms({dispatch, commit}) {
         const params = {
             ...state.params,
-            ...searchParams,
+            ...state.searchParams,
         };
         console.log(params);
-        // await dispatch('getAllFilms', params);
-        // commit('', searchParams);
+        await dispatch('getAllFilms', params);
     }   
 };
 
@@ -69,7 +69,15 @@ const mutations = {
 
     setPageNumber(state, value) {
         state.params.offset = value;
-    }
+    },
+
+    setSearchText(state, value) {
+        state.searchParams.search = value;
+    },
+
+    setSearchByValue(state, value) {
+        state.searchParams.searchBy = value;
+    },
 };
 
 export default {
