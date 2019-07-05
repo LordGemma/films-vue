@@ -16,11 +16,22 @@ export default {
     },
 
     created() {
-        this.$store.dispatch('films/getAllFilms', {
+        const isSearchAvelable = Object.keys(this.$route.query).length !== 0;
+        let params = {
             limit: 12, 
             sortOrder: 'desc', 
-            sortBy: 'release_date'
-        })
+            sortBy: 'release_date',
+        }
+        if(isSearchAvelable) {
+            params = {
+                ...params,
+                search: this.$route.query.search || '',
+                searchBy: this.$route.query.searchBy || 'title',
+
+            }
+        }
+
+        this.$store.dispatch('films/getAllFilms', params)
     },
 }
 </script>
