@@ -9,3 +9,21 @@
         </article>
     </div>
 </template>
+
+<script>
+import { mapState, mapActions } from 'vuex';
+
+export default {
+    created() {
+        const filmId = this.$route.params.id;
+        this.$store.dispatch('singleFilm/getFilmData', filmId);
+    },
+
+    computed: {
+        ...mapState({
+            filmData: state => state.singleFilm.filmData,
+        })
+    }
+}
+</script>
+

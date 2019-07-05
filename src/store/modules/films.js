@@ -47,12 +47,11 @@ const actions = {
         commit('setPageNumber', pagination);
     },
 
-    async searchFilms({dispatch, commit}) {
+    async searchFilms({dispatch}) {
         const params = {
             ...state.params,
             ...state.searchParams,
         };
-        console.log(params);
         await dispatch('getAllFilms', params);
     }   
 };

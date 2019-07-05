@@ -1,7 +1,12 @@
 <template>
     <div class="search">
         <b-field grouped>
-            <b-input placeholder="Search..." v-model="searchText" expanded></b-input>
+            <b-input 
+                placeholder="Search..." 
+                v-model="searchText" 
+                expanded
+                @keyup.enter="handleSearch"
+            ></b-input>
             <p class="control">
                 <Button 
                     btnText='Search'
@@ -57,12 +62,23 @@ export default {
 
     methods: {
         handleSearch() {
+            const isQueryParamsExist = this.searchText.length > 0; 
+            let params = {}
+            if(isQueryParamsExist) {
+                params = {search: this.searchText, searchBy: this.searchBy};
+            }
+            this.$router.replace({query: params})
             this.$store.dispatch('films/searchFilms');
         },
 
         handleClick(value) {
             this.$store.commit('films/setSearchByValue', value);
         }
+    },
+
+    watch: {
+        // call again the method if the route changes
+        '$route': 'handleSearch'
     },
 
     data() {

@@ -1,5 +1,5 @@
 <template>
-    <div class="card film">
+    <div class="card film" @click='goToFilmDetails'>
         <div class="card-image">
             <figure class="image is-4by3">
             <img :src="data.poster_path" alt="Film Poster">
@@ -27,14 +27,21 @@
 <script>
 export default {
     props: {
-        data:Object,
+        data: Object,
     },
+
+    methods: {
+        goToFilmDetails() {
+            this.$router.push({path: `/films/${this.data.id}`});
+        }
+    }
 }
 </script>
 
 
 <style lang="scss">
     .film {
+        cursor: pointer;
         background-color: transparent;
         box-shadow: none;
 

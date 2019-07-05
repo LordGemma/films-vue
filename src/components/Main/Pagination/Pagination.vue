@@ -2,7 +2,7 @@
     <section>
         <div class="container">
             <b-pagination
-                v-show="total"
+                v-show="total > 12"
                 :total="total"
                 :current.sync="currentPage"
                 :order="order"

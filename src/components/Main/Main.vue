@@ -22,6 +22,7 @@ export default {
             sortOrder: 'desc', 
             sortBy: 'release_date',
         }
+        
         if(isSearchAvelable) {
             params = {
                 ...params,
