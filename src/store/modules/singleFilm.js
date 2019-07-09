@@ -12,7 +12,10 @@ const getters = {
 
 const actions = {
     async getSimilarGenres({commit}, genres) {
-        const params = {searchBy: 'genres', filter: genres}
+        const params = {
+            filter: genres,
+            limit: 6,
+        };
         const { data } = await fetchAllFilms(params);
         commit('setFilmsWithSimilarGenres', data)
     },

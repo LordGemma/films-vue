@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Header />
+    <Header>
+      <h2 class="search-title">Find Your Movie</h2>
+      <Search />
+    </Header>
     <FilterBar />
     <Main />
     <Footer />
@@ -12,6 +15,7 @@
 import Header from '@/components/Header/Header';
 import FilterBar from '@/components/FilterBar/FilterBar';
 import Main from '@/components/Main/Main';
+import Search from '@/components/Search/Search';
 import Footer from '@/components/Footer/Footer';
 
 export default {
@@ -20,6 +24,7 @@ export default {
     Header,
     FilterBar,
     Main,
+    Search,
     Footer,
   }
 }

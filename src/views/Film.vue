@@ -1,6 +1,6 @@
 <template>
   <div class="film-details">
-    <SingleFilm />
+    <SingleFilm>test</SingleFilm>
   </div>
 </template>
 

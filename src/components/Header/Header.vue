@@ -5,8 +5,7 @@
                 <Logo />
             </section>
             <section>
-                <h2 class="search-title">Find Your Movie</h2>
-                <Search />
+                <slot></slot>
             </section>
         </div>
     </header>
@@ -14,13 +13,11 @@
 
 <script>
 import Logo from '@/components/Logo/Logo';
-import Search from '@/components/Search/Search';
 
 export default {
     name: 'Header',
     components: {
         Logo,
-        Search,
     }
 }
 </script>
