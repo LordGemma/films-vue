@@ -46,7 +46,11 @@ export default {
         box-shadow: none;
 
         .image {
-            min-height: 350px;
+            min-height: 400px;
+            height: 100%;
+            img {
+                height: 100%;
+            }
         }
 
         .card-content {
