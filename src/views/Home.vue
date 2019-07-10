@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <Header>
-      <h2 class="search-title">Find Your Movie</h2>
-      <Search />
+      <template v-slot:content>
+        <h2 class="search-title">Find Your Movie</h2>
+        <Search />
+      </template>
     </Header>
     <FilterBar />
     <Main />

@@ -30,6 +30,7 @@ const actions = {
         console.log(state);
         const params = {
             ...state.params,
+            ...state.searchParams,
             sortBy: value,
         };
         await dispatch('getAllFilms', params);
