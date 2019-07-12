@@ -16,7 +16,6 @@
             </template>
         </Header>
         <section class="same-genres"></section>
-        <Footer />
     </div>
 </template>
 
@@ -24,7 +23,6 @@
 import { mapState, mapActions } from 'vuex';
 import Logo from '@/components/Logo/Logo';
 import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import BackButton from '@/components/Button/BackButton';
 import Poster from './Poster';
 import FilmDetails from './FilmDetails/FilmDetails';
@@ -33,7 +31,6 @@ export default {
     components: {
         Logo,
         Header,
-        Footer,
         BackButton,
         Poster,
         FilmDetails,

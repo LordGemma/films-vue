@@ -8,7 +8,6 @@
     </Header>
     <FilterBar />
     <Main />
-    <Footer />
   </div>
 </template>
 
@@ -18,7 +17,6 @@ import Header from '@/components/Header/Header';
 import FilterBar from '@/components/FilterBar/FilterBar';
 import Main from '@/components/Main/Main';
 import Search from '@/components/Search/Search';
-import Footer from '@/components/Footer/Footer';
 
 export default {
   name: 'home',
@@ -27,14 +25,7 @@ export default {
     FilterBar,
     Main,
     Search,
-    Footer,
   }
 }
 </script>
-
-<style lang="scss">
-.home {
-  height: 100%;
-}
-</style>
 
