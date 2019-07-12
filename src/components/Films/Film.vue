@@ -18,7 +18,10 @@
             </div>
 
             <b-taglist>
-                <b-tag v-for="genre in data.genres" :key="genre">{{genre}}</b-tag>
+                <b-tag 
+                    v-for="genre in data.genres" 
+                    :key="genre"
+                >{{genre}}</b-tag>
             </b-taglist>
         </div>
     </div>

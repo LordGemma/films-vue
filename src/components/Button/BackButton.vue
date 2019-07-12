@@ -1,5 +1,4 @@
 <template>
-    <!-- <i @click="" class="fas fa-search"></i> -->
     <button class="button back-button" @click="handleClick">
         <b-icon
             pack="fas" 
@@ -23,7 +22,7 @@ export default {
     methods: {
         handleClick() {
             const url = this.search.length !== 0 ? `/?sortBy=${this.sortBy}&search=${this.search}&searchBy=${this.searchBy}` : `/?sortBy=${this.sortBy}`;
-            this.$router.push({path: url})
+            this.$router.push({path: url});
         }
     }
 }

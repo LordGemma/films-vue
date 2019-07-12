@@ -27,7 +27,6 @@ const actions = {
     },
 
     async sortFilmsBy({state, commit, dispatch}, value) {
-        console.log(state);
         const params = {
             ...state.params,
             ...state.searchParams,
