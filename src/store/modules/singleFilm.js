@@ -30,7 +30,7 @@ const actions = {
 const mutations = {
     setFilmData(state, film) {
         state.filmData = film;
-        state.filmId = film.id;
+        state.filmId = film.id || 0;
     },
     setFilmsWithSimilarGenres(state, films) {
         state.filmsWithSimilarGenres = films;

@@ -41,15 +41,15 @@ export default {
         this.$store.dispatch('singleFilm/getFilmData', filmId);
     },
 
+    beforeDestroy() {
+        this.$store.commit('singleFilm/setFilmData', {})
+    },
+
     computed: {
         ...mapState({
             filmData: state => state.singleFilm.filmData,
         })
     },
-
-    mounted() {
-        
-    }
 }
 </script>
 
